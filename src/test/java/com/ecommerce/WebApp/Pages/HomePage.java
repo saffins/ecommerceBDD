@@ -3,6 +3,7 @@
  */
 package com.ecommerce.WebApp.Pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +22,7 @@ import com.ecommerce.WebApp.Base.BasePage;
  *
  */
 public class HomePage extends BasePage {
+	public Logger logger=Logger.getLogger( BasePage.class.getName());
 
 	private By logo=By.cssSelector("img[class='TRRBg _R']");
 			
@@ -52,6 +54,7 @@ public class HomePage extends BasePage {
 		waitForElementToBeClickable(searchProductInput);
 		getElement(searchProductInput).sendKeys(productName);
 		getElement(searchBtn).click();
+		logger.info("searched the product "+ productName);
 	}
 
 	public void clickSearchedProduct(){

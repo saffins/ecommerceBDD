@@ -37,7 +37,6 @@ public class LoginPageStepDefination {
     public void login_with_creds(String username, String pass, String expectedMsg) {
         String actual = myAccountLogin.signInWithCredentials(username, pass, expectedMsg);
         Assert.assertEquals(expectedMsg, actual);
-
     }
 
     @Then("user logs out of the application")
